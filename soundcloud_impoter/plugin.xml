@@ -1,0 +1,26 @@
+<plugin>
+    <nom>SoundCloud Importer</nom>
+    <version>0.1</version>
+    <prefix>soundcloud</prefix>
+    <etat>test</etat>
+    <auteur>
+        Renato Formato [contact->mailto:renato@rollstudio.it]
+        Patrick Arminio [contact->mailto:patrick@rollstudio.it]
+    </auteur>
+    <description>This plugin allows you to import your soundcloud tracks into a spip rubrique</description>
+    
+    <pipeline>
+        <nom>autoriser</nom>
+        <inclure>inc/soundcloud_autoriser.php</inclure>
+    </pipeline>
+
+    <pipeline>
+        <nom>taches_generales_cron</nom>
+        <inclure>inc/soundcloud_cron.php</inclure>
+    </pipeline>
+    
+    <onglet id='soundcloud' parent='configuration'>
+        <icone>images/iextras-24.png</icone>
+        <titre>SoundCloud</titre>
+    </onglet>
+</plugin>

@@ -1,0 +1,19 @@
+<div id="sc_result">
+	#ENV{message_ok}
+	#ENV{message_erreur}
+</div>
+<form action="#ENV{action}" method="POST">
+	#ACTION_FORMULAIRE{#ENV{action}}
+	<p><label for="user_id">User id:</label> <input name="user_id" id="user_id" type="text" value="#CONFIG{sc_user_id}" /></p>
+	<p><label for="client_id">Client id:</label> <input name="client_id" id="client_id" type="text" value="#CONFIG{sc_client_id}" /></p>
+    <p>
+        <label for="rubrique_id">Rubrique</label>
+        <select name="rubrique_id" id="rubrique_id">
+        <BOUCLE_rubriques(RUBRIQUES)>
+            <option value="#ID_RUBRIQUE"[ (#ID_RUBRIQUE|=={#CONFIG{sc_rubrique_id}}|oui)selected="selected"]>#TITRE</option>
+        </BOUCLE_rubriques>
+        </select>
+    </p>
+
+    <input type="submit" name="submit" value="Save" />
+</form>
