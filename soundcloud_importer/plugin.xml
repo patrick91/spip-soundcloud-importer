@@ -1,6 +1,6 @@
 <plugin>
     <nom>SoundCloud Importer</nom>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <prefix>soundcloud</prefix>
     <etat>test</etat>
     <auteur>
